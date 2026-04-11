@@ -1,18 +1,16 @@
-# Raw data - NEVER commit large CSV files
+# Raw data (large CSVs) - never commit
 data/raw/*
 !data/raw/.gitkeep
 
-# Processed data - we only commit small/medium standardized parquet files
+# Processed data - allow small/medium parquet for now
 data/processed/*
 !data/processed/.gitkeep
 
-# Models (never commit trained models)
+# Models and outputs
 models/**
-
-# Reports and outputs
 reports/**
 
-# Python cache and bytecode
+# Python cache
 __pycache__/
 *.pyc
 *.pyo
@@ -23,24 +21,14 @@ venv/
 .venv/
 env/
 ENV/
-*.env
 
-# IDE and editor files
-.vscode/
-.idea/
-*.swp
-*.swo
+# OS & IDE
 .DS_Store
 Thumbs.db
+.vscode/
+.idea/
 
-# Temporary exploration scripts (we will remove these later)
-*explore*.py
-
-# Jupyter notebooks (optional - add if you create any)
-*.ipynb
-.ipynb_checkpoints/
-
-# Large files (safety)
+# Temporary large files
 *.csv
 *.zip
-*.tar.gz
+*.parquet   # remove this line later if you want to track processed parquet files
