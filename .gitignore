@@ -1,17 +1,46 @@
-# Virtual environment
-venv/
+# Raw data - NEVER commit large CSV files
+data/raw/*
+!data/raw/.gitkeep
 
-# Python cache
+# Processed data - we only commit small/medium standardized parquet files
+data/processed/*
+!data/processed/.gitkeep
+
+# Models (never commit trained models)
+models/**
+
+# Reports and outputs
+reports/**
+
+# Python cache and bytecode
 __pycache__/
 *.pyc
+*.pyo
+*.pyd
 
-# Jupyter Notebook checkpoints
+# Virtual environments
+venv/
+.venv/
+env/
+ENV/
+*.env
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# Temporary exploration scripts (we will remove these later)
+*explore*.py
+
+# Jupyter notebooks (optional - add if you create any)
+*.ipynb
 .ipynb_checkpoints/
 
-# Data files (large datasets)
-data/
+# Large files (safety)
 *.csv
-*.xlsx
-
-# IDE/editor settings
-.vscode/
+*.zip
+*.tar.gz
